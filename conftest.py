@@ -24,3 +24,19 @@ def create_order_data():
     payload = data_generation.generation_order_data()
 
     return payload
+
+@pytest.fixture
+def create_order(create_order_data):
+    payload = create_order_data
+    response_create = requests.post(Handles.handle_create_order, json=payload)
+    track_order = response_create.json()['track']
+
+    return track_order
+
+@pytest.fixture
+def login(create_courier):
+    payload = create_courier
+    response_login = requests.post(Handles.handle_login_courier, data=payload)
+    id_courier = response_login.json()['id']
+
+    return id_courier

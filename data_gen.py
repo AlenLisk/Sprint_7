@@ -39,6 +39,7 @@ class DataGeneration:
             "rentTime": random.randint(0, 6),
             "deliveryDate": '2024-12-12',
             "comment": comment,
+            "color": []
         }
 
         return payload

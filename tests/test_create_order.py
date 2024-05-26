@@ -19,6 +19,13 @@ class TestCreateOrder:
 
         assert response_create.status_code == 201 and 'track' in response_create.text
 
+    def test_get_a_list_of_orders(self):
+        response = requests.get(Handles.handle_create_order)
+        assert response.status_code == 200 and 'orders' in response.text
+
+
+
+
 
 
 
