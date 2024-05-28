@@ -40,3 +40,13 @@ def login(create_courier):
     id_courier = response_login.json()['id']
 
     return id_courier
+
+@pytest.fixture
+def get_order_id(create_order):
+    track_order = create_order
+    payload = {'t': track_order}
+
+    response = requests.get(f'{Handles.handle_create_order}/track', params=payload)
+    id_order = response.json()['order']['id']
+
+    return id_order

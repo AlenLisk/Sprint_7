@@ -24,11 +24,19 @@ class DataGeneration:
 
         return payload
 
+    def generation_random_date(self):
+        start_date = datetime(2024, 7, 1)
+        end_date = datetime(2025, 7, 1)
+        random_date = start_date + timedelta(days=random.randint(0, (end_date - start_date).days))
+
+        return random_date.strftime("%d.%m.%Y")
+
     def generation_order_data(self, length=10):
         first_name = self.generate_random_string(length)
         last_name = self.generate_random_string(length)
         address = self.generate_random_string(length)
         comment = self.generate_random_string(length)
+        date = self.generation_random_date()
 
         payload = {
             "firstName": first_name,

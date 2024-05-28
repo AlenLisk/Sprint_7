@@ -9,7 +9,8 @@ class TestDeleteCourier:
         assert response.status_code == 200 and response.text == '{"ok":true}'
 
     def test_delete_courier_without_id(self, login):
-        response = requests.delete(f'{Handles.handle_create_courier}/')
+        id_courier = ''
+        response = requests.delete(f'{Handles.handle_create_courier}/{id_courier}')
 
         assert response.status_code == 404
 
