@@ -29,7 +29,7 @@ class DataGeneration:
         end_date = datetime(2025, 7, 1)
         random_date = start_date + timedelta(days=random.randint(0, (end_date - start_date).days))
 
-        return random_date.strftime("%d.%m.%Y")
+        return random_date.strftime("%Y-%m-%d")
 
     def generation_order_data(self, length=10):
         first_name = self.generate_random_string(length)
@@ -45,7 +45,7 @@ class DataGeneration:
             "metroStation": random.randint(0, 6),
             "phone": f'8{random.randint(9000000000,9999999999)}',
             "rentTime": random.randint(0, 6),
-            "deliveryDate": '2024-12-12',
+            "deliveryDate": date,
             "comment": comment,
             "color": []
         }

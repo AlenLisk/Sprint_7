@@ -2,6 +2,7 @@ import pytest
 from data_gen import DataGeneration
 import requests
 from handles import Handles
+import allure
 
 @pytest.fixture
 def create_payload():
