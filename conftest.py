@@ -14,7 +14,7 @@ def create_payload():
 @pytest.fixture
 def create_courier(create_payload):
     payload = create_payload
-    response_create = requests.post(Handles.handle_create_courier, data=payload)
+    requests.post(Handles.handle_create_courier, data=payload)
     del payload['firstName']
 
     return payload

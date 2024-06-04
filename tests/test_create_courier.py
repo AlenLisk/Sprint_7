@@ -11,7 +11,7 @@ class TestCreateCourier:
     @allure.title('Проверка создания двух одинаковых курьеров')
     def test_create_two_identical_couriers(self, create_payload):
         payload = create_payload
-        response_create = requests.post(Handles.handle_create_courier, data=payload)
+        requests.post(Handles.handle_create_courier, data=payload)
         response_conflict = requests.post(Handles.handle_create_courier, data=payload)
 
         assert response_conflict.status_code == 409 and 'логин уже используется' in response_conflict.text

@@ -1,6 +1,5 @@
 import random
 import string
-from datetime import datetime
 from datetime import datetime, timedelta
 class DataGeneration:
     @staticmethod
@@ -10,7 +9,6 @@ class DataGeneration:
         return random_string
 
     def register_new_courier_and_return_login_password(self, length=10):
-        #login_pass = []
 
         login = self.generate_random_string(length)
         password = self.generate_random_string(length)
@@ -51,15 +49,3 @@ class DataGeneration:
         }
 
         return payload
-
-
-
-    # если регистрация прошла успешно (код ответа 201), добавляем в список логин и пароль курьера
-    #if response.status_code == 201:
-    #   login_pass.append(login)
-    #    login_pass.append(password)
-    #    login_pass.append(first_name)
-
-    # возвращаем список
-    #return login_pass
-

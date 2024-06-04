@@ -24,11 +24,3 @@ class TestCreateOrder:
     def test_get_a_list_of_orders(self):
         response = requests.get(Handles.handle_create_order)
         assert response.status_code == 200 and 'orders' in response.text
-
-
-
-
-
-
-
-
